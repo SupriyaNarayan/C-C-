@@ -2,7 +2,7 @@
 //  main.cpp
 //  Project
 //
-//  Created by Supriya Narayan on 11/20/15.
+//  Created by Supriya Narayan: supriyn@g.clemson.edu
 //  Copyright © 2015 Supriya Narayan. All rights reserved.
 //
 
@@ -15,7 +15,7 @@
 #include "Camera.h"
 #include <cstdlib>
 #include <cstdio>
-#ifdef __APPLE__
+#ifdef __APPLE__    /* works on mac */
 #  include <GLUT/glut.h>
 #else
 #  include <GL/glut.h>
@@ -24,11 +24,13 @@
 #define WIN_WT 400
 #define ALPHA 0.05f
 using namespace std;
-Vector3d pos1(5,0.5,0);
+/*defining the initial position of ball and paddles*/
+Vector3d pos1(5,0.5,0); 
 Vector3d pos2(5,9.5,0);
 Vector3d pos3(0.5,5,0);
 Vector3d pos4(9.5,5,0);
 Vector3d ballpos(5,5,0);
+/* defining the velocity and accelerator */
 Vector3d newballpos,newvelocity;
 Vector3d Velocity(1,1,0);
 Vector3d accel(2,-10,0);
@@ -68,6 +70,8 @@ void handleResize(int w, int h)
     glLoadIdentity();
     gluPerspective(45.0, (float)w / (float)h, 1.0, 200.0);
 }
+
+/*Function that decides the ball position */
 void drawBall(){
     glTranslatef( 0, 0, 0 );
     glColor3f(0.0,0.5,0.0);
@@ -76,6 +80,8 @@ void drawBall(){
     glutWireSphere(0.5,20,20);
     glPopMatrix();
 }
+
+/*to change the ball position*/
 void a(){
     if(newballpos.y<0.5)
     {
@@ -100,7 +106,7 @@ void b(){
         
     }
 }
-/*void c(){
+void c(){
     if(newballpos.x<0.5)
     {
         if((pos3.y< newballpos.y) && (newballpos.y < pos3.y +2 ))
@@ -124,15 +130,15 @@ void d(){
         }
         
     }
-}*/
+}
 
 void simulate(){
     newvelocity = Velocity + accel * 0.05;
     newballpos= ballpos + Velocity * 0.05;
     a();
     b();
-    //c();
-    //d();
+    c();
+    d();
     if (newballpos.x > 11.5 || newballpos.x < -1 || newballpos.y >11.5 || newballpos.y < -1)
     {
         newvelocity = (0,0,0);
@@ -143,7 +149,9 @@ void simulate(){
     Velocity = newvelocity;
     drawBall();
 }
-/*void paddle3(){
+
+/*defining initial paddle position*/
+void paddle3(){
     glTranslatef( 0, 0, 0 );
     glColor3f(0.0,0.0,0.5);
     glBegin(GL_QUADS);
@@ -162,7 +170,7 @@ void paddle2(){
     glVertex3f(pos3.x-1,pos3.y+2,pos3.z);
     glVertex3f(pos3.x,pos3.y+2,pos3.z);
     glEnd();
-}*/
+}
 void paddle1(){
     glTranslatef( 0, 0, 0 );
     glColor3f(0.0,0.0,0.5);
@@ -183,6 +191,7 @@ void paddle(){
     glVertex3f(pos1.x,pos1.y-1,pos1.z);
     glEnd();
 }
+/*function to call both drawBall and all paddle*/
 void drawScene() {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     camera->PerspectiveDisplay(WIN_HT, WIN_WT);
@@ -199,8 +208,8 @@ void drawScene() {
     glEnd();
     paddle();
     paddle1();
-    //paddle2();
-    //paddle3();
+    paddle2();
+    paddle3();
     //simulate();
     glutSwapBuffers();
 }
@@ -209,10 +218,10 @@ void update(int value) {
     glutPostRedisplay();
     glutTimerFunc(175, update, 0);
 }
-
-
+/*function defining keys */
 void handleKeypress(unsigned char key, int x, int y) {
     switch (key) {
+        /*a and s handle paddle on x axis to move left and right*/
         case 'a' :
             if(co==0){
             if(pos1.x<8){
@@ -246,6 +255,7 @@ void handleKeypress(unsigned char key, int x, int y) {
 
             }
             break;
+            /*k and l handle paddle on y axis to move up and down*/
         case 'k' :
             if(pos2.x<8){
                 pos2.x=pos2.x+1;
