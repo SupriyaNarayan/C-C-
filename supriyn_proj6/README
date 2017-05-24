@@ -1,0 +1,29 @@
+Name:Supriya Narayan
+Clemson Email Address:supriyn@clemson.edu
+
+Project no:6
+Project due date:12/02/2016
+
+Project description:
+The sleepingPanda Game.
+Panda flying on magic carpet in a background from Kung fu panda movie. 
+The controls ASDW are implemented, where the panda shall change its path on the same ground in y direction when s and w keys are used. The keys a and d help panda move left and right respectively.
+Painters algorithm is implemented to blades which needs to be shot by the panda.
+key 'h' is used to shoot panda bullet to destroy blades. 
+key 'r' handels the reset function.
+key 'g' for godmode and the healthbar is not affected when godmode is on.
+Hud is displayed for 3 seconds in the beginning and later can be toggled using the key 'F1'.
+The panda is restricted with boundary to move using the keys, it shall not move outside the world.
+There is a health hud which is decremented based on time and final score of number of blades destroyed shall be displayed and MagicPanda disappears.
+The blades explode and reappear after chunk explosion.
+The bullet from panda is objectpooled.
+Each time blade is destroyed by panda bullet or by panda itself, 1 point is increased in score and the blade reappears as a smart sprite with AI where the blades try to escape from panda and not panda bullets.
+There is a backgroud music taken from kungfupanda movie. And each time a bullet is shot (i.e is key h is pressed) a sound is itegrated too.
+
+Reference: For sprites: spritedatabase.net for panda;
+www.wallpapercave.com for background;
+youtube for kungupanda background song.
+
+Problems with this project: None,All requirements satisfied.
+
+

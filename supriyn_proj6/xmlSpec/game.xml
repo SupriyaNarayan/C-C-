@@ -1,0 +1,145 @@
+<?xml version = "1.0"?>
+<GameData>
+<screenTitle>Supriya Narayan's SleepingPanda</screenTitle>
+<maxStringSize>50</maxStringSize>
+
+<frameMax>200</frameMax>
+<username>supriyn</username>
+<numberOfOrbs>100</numberOfOrbs>
+
+<view>
+  <width>800</width>
+  <height>480</height>
+</view>
+
+<world>
+  <width>2018</width>
+  <height>480</height>
+</world>
+
+<hud>
+ <height>230</height>
+ <width>295</width>
+ <src_x>0</src_x>
+ <src_y>0</src_y>
+</hud>
+
+<font name="font">
+  <file>font/dyslexic-bold.otf</file>
+  <size>16</size>
+  <red>0</red>
+  <green>0</green>
+  <blue>0</blue>
+  <unused>0</unused>
+</font>
+
+<healthhud>
+  <healthLoc x="540" y="470"/>
+  <healthDim x="200" y="14"/>
+  <Incr>5</Incr>
+  <Interval>1000</Interval>
+  <Delta>0</Delta>
+</healthhud>
+
+<clock>
+  <frameCap>60</frameCap>
+  <framesAreCapped>true</framesAreCapped>
+  <adjustmentFactor>1.0</adjustmentFactor>
+</clock>
+
+<kungfuback>
+  <file>images/secback.png</file>
+  <red>193</red>
+  <green>205</green>
+  <blue>205</blue>
+  <factor>3</factor>
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>2000</width>
+  <height>480</height>
+  <transparency>false</transparency>
+</kungfuback>
+
+<kungfu>
+  <file>images/kf_final_try.png</file>
+  <red>193</red>
+  <green>205</green>
+  <blue>205</blue>
+  <factor>3</factor>
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>2000</width>
+  <height>480</height>
+  <transparency>false</transparency>
+</kungfu>
+
+
+<kungfubullet>
+  <file>images/enemy.png</file>
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <cushion> 0.0 </cushion>
+  <chunk>
+    <size>16</size>
+    <distance>100</distance>
+    <spinAngle>0</spinAngle>
+  </chunk>
+  <scale min = "0.15" max = "2.5"/>
+  <numberOfkungfubullets>25</numberOfkungfubullets>
+  <src x = "0" y = "0"/>
+  <loc x = "500" y = "10"/>
+  <width>50</width>
+  <height>30</height>
+  <startLoc x="320" y="240"/>
+  <speed x = "200" y = "10"/>
+  <speedX>-200</speedX>
+  <speedY>200</speedY>
+  <yLimit>150</yLimit>
+  <transparency>true</transparency>
+</kungfubullet>
+
+<player>
+  <file>images/mat_panda1.png</file>
+  <src x="0" y="0"/>
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>169</width>
+  <height>82</height>
+  <startLoc x="300" y="350"/>
+  <speed x="550" y="450"/>
+  <speedX>550</speedX>
+  <speedY>450</speedY>
+  <bulletName>bullet</bulletName>
+  <bulletInterval>200</bulletInterval>
+  <minBulletSpeed>200</minBulletSpeed>
+  <transparency>true</transparency>
+</player>
+
+<bullet>
+  <file>images/bullet_enemy.png</file>
+  <srcX>0</srcX>
+  <srcY>0</srcY>
+  <width>38</width>
+  <height>37</height>
+  <maxDistance>500</maxDistance>
+  <spinAngle>0</spinAngle>
+  <startLoc x="0" y="0"/>
+  <speed x="400" y="100"/>
+  <speedX>400</speedX>
+  <speedY>100</speedY>
+  <transparency>true</transparency>
+</bullet>
+
+<leaf1>
+  <file>images/try_leaf.png</file>
+  <cushion>4</cushion>
+  <scale min="0.5" max="1.5"/>
+  <src x="1000" y="-100"/>
+  <width>7</width>
+  <height>7</height>
+  <loc x="1000" y="-10"/>
+  <speed x="150" y="80"/>
+  <transparency>true</transparency>
+</leaf1>
+
+</GameData>
